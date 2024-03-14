@@ -69,14 +69,14 @@ def m(string=input("Enter the 12 available letters.\n")):
         
         print("Pass 2 completed... (50%)\n")
         
-        pass_4_1 = pass_2.copy()
+        pass_0 = pass_2.copy()
 
         for x in range(len(pass_2)):
             set_string = list(string)
             for char in pass_2[x]:
                 if char in set_string:
                     set_string.remove(char)
-            for y in pass_4_1:
+            for y in pass_0:
                 knockoff = set_string.copy()
                 for c in y:
                     if c in knockoff:

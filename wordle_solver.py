@@ -30,15 +30,12 @@ class Algorithm(object):
                 self.smallest_list_of_options = self.guess_options.copy()
                 self.base_value = len(self.guess_options)
                 self.store_word = full_list[i]
-        return self.store_word
-
-    def return_first_word(self):
-        return self.store_word
+        return self.store_word    
     
     def manage_info(self, prev_word):
          dict_confirmed_letters, dict_immovable_letters = {}, {}
          list_letters_thrown_away, pass_1, pass_2, pass_3 = [], [], [], []
-         x = input(f"Enter your results from {prev_word} Key: enter 0 for gray, 1 for yellow, and 2 for green.")
+         x = input(f"Enter your results from {prev_word} Key: enter 0 for gray, 1 for yellow, and 2 for green.\n")
          for c in range(len(x)):
              if x[c] == "1":
                 dict_confirmed_letters[c] = prev_word[c]
@@ -81,7 +78,7 @@ class Algorithm(object):
                          check_all_letters = False
                  if check_all_letters:
                      pass_3.append(word)
-             print(pass_3, len(pass_3))
+             print(self.find_least_worst_case_options(pass_3))
                 
                    
 
@@ -97,6 +94,6 @@ class Algorithm(object):
 
 
 start = time.time()            
-{Algorithm().manage_info("naieo")}
+print(Algorithm().manage_info("naieo"))
 end = time.time()
 print(f"total time elapsed: {end-start}")

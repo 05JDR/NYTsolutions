@@ -85,12 +85,11 @@ def m(string=input("Enter the 12 available letters.\n")):
                     pass_3[pass_2[x]] = y
 
         print("Pass 3 completed... (75%)\n")
-        
+        i = 0
         for key in pass_3.keys():
             if key[-1] == pass_3[key][0]:
-                pass_4.append((key, pass_3[key])) 
-            
-        print(pass_4)
+                i += 1
+                print(f"Option {i}: {key} & {pass_3[key]}")
 
 
 m()
